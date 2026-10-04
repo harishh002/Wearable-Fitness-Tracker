@@ -63,13 +63,10 @@ This project provides a software-based prototype that simulates this process wit
 
 ## 7. System Architecture
 
-The application follows this processing pipeline:
 
-Virtual Sensor → Device Interface → Data Validation → Health Analyzer → Data Logger → Console Dashboard
+![System Architecture](docs/diagrams/Wearable%20Fitness%20Tracker%20System%20Architecture.png)
 
-A separate process communication demonstration uses:
-
-Producer Process → POSIX Pipe → Consumer Process
+For detailed system design, see [Stage 3 Documentation](docs/STAGE_3_DESIGN.md).
 
 ## 8. Project Structure
 
