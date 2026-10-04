@@ -1,0 +1,7 @@
+flowchart LR
+A[Sensor Simulator] --> B[Device Interface]
+B --> C[Health Analyzer]
+C --> D[Logger]
+C --> E[Console Dashboard]
+F[Producer Process] --> G[POSIX Pipe]
+G --> H[Consumer Process]

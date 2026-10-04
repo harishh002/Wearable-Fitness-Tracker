@@ -1,0 +1,15 @@
+sequenceDiagram
+participant Main
+participant Device as DeviceInterface
+participant Sensor as SensorSimulator
+participant Analyzer as HealthAnalyzer
+participant Logger
+
+Main->>Device: readDevice()
+Device->>Sensor: read()
+Sensor-->>Device: BiometricData
+Device-->>Main: BiometricData
+Main->>Analyzer: analyze(data)
+Analyzer-->>Main: AnalysisResult
+Main->>Logger: write(data,result)
+Logger-->>Main: record stored

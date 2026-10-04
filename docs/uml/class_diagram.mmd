@@ -1,0 +1,31 @@
+classDiagram
+class SensorSimulator {
+  +read() BiometricData
+  -rng
+}
+class DeviceInterface {
+  +readDevice() BiometricData
+}
+class HealthAnalyzer {
+  +analyze(BiometricData) AnalysisResult
+}
+class Logger {
+  +write(BiometricData, AnalysisResult)
+}
+class BiometricData {
+  +int heartRate
+  +int spo2
+  +double temperature
+  +int steps
+  +bool moving
+}
+class AnalysisResult {
+  +HealthStatus status
+  +string message
+}
+DeviceInterface --> SensorSimulator
+DeviceInterface --> BiometricData
+HealthAnalyzer --> BiometricData
+HealthAnalyzer --> AnalysisResult
+Logger --> BiometricData
+Logger --> AnalysisResult

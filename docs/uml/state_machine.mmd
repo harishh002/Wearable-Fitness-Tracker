@@ -1,0 +1,9 @@
+stateDiagram-v2
+[*] --> Initializing
+Initializing --> Running
+Running --> ReadingSensor
+ReadingSensor --> Analyzing
+Analyzing --> Logging
+Logging --> Running
+Running --> Shutdown : SIGINT/SIGTERM
+Shutdown --> [*]
