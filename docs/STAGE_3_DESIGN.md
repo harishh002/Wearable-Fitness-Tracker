@@ -3,7 +3,7 @@
 ## 1. Architecture
 The system uses a layered architecture:
 
-![Wearable Fitness Tracker Architecture](diagrams/Wearable Fitness Tracker System Architecture.png)
+![Wearable Fitness Tracker System Architecture](Wearable%20Fitness%20Tracker%20System%20Architecture.png)
 
 ## 2. Component Responsibilities
 SensorSimulator: creates virtual sensor data.
