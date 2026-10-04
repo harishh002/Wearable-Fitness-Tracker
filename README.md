@@ -184,6 +184,21 @@ The Wearable Fitness Tracker demonstrates how C++ and Linux system programming c
 
 The project provides a foundation for future development involving Linux device drivers, embedded systems, and real-time wearable monitoring.
 
+## 17. Project Documentation
+
+The project is organized into six development stages, covering project introduction, requirements, system design, implementation, testing, and final delivery.
+
+| Stage | Documentation |
+|---|---|
+| Stage 1 | [Project Introduction](docs/STAGE_1_INTRODUCTION.md) |
+| Stage 2 | [Project Requirements](docs/STAGE_2_PRD.md) |
+| Stage 3 | [System Design & Architecture](docs/STAGE_3_DESIGN.md) |
+| Stage 4 | [Initial Implementation](docs/STAGE_4_IMPLEMENTATION.md) |
+| Stage 5 | [Testing & Integration](docs/STAGE_5_TESTING.md) |
+| Stage 6 | [Final Report](docs/STAGE_6_FINAL.md) |
+
+
+
 ## Author
 
 **Harish Chandra Mohapatra**
