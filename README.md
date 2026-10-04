@@ -1,102 +1,196 @@
-# Wearable Fitness Tracker – Virtual Biometric Data Pipeline
+# Wearable Fitness Tracker
+### Linux-Based Virtual Biometric Data Pipeline
 
-## Project Type
-Individual Project – Linux, Device Drivers, System Programming & C++
+**Capstone Project – Module 9**
 
-## Technology
-- C++17
-- Linux / GNU g++
-- POSIX system programming concepts
-- Make
+## 1. Project Information
+
+- **Project Type:** Individual Project
+- **Programming Language:** C++17
+- **Operating System:** Ubuntu Linux (WSL2 development environment)
+- **Build Tool:** GNU Make
+- **Compiler:** GNU G++
+- **Version Control:** Git and GitHub
+
+## 2. Project Overview
+
+The Wearable Fitness Tracker is a Linux-based virtual biometric monitoring system developed using C++17. The project simulates wearable sensors to generate biometric readings such as heart rate, blood oxygen saturation (SpO2), body temperature, step count, and physical activity.
+
+The system collects sensor data, validates readings, performs health-status analysis, detects abnormal values, and stores the results in a CSV log file.
+
+The project demonstrates modular software architecture, Linux system programming, POSIX process management, inter-process communication, file handling, and device-interface abstraction.
+
+## 3. Problem Statement
+
+Wearable fitness devices continuously generate biometric information that requires collection, processing, monitoring, and storage.
+
+This project provides a software-based prototype that simulates this process without requiring physical wearable hardware.
+
+## 4. Project Objectives
+
+- Simulate biometric sensor readings.
+- Develop a modular C++ application.
+- Implement data validation and health analysis.
+- Demonstrate Linux/POSIX system programming.
+- Implement process communication using fork and pipe.
+- Store biometric information in CSV format.
+- Display health status through a console dashboard.
+
+## 5. Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| C++17 | Application development |
+| Linux | Development and execution environment |
+| GNU G++ | Compilation |
+| POSIX APIs | Process and system programming |
+| fork() | Process creation |
+| pipe() | Inter-process communication |
+| Make | Build automation |
+| Git/GitHub | Version control and submission |
+| CSV | Data logging |
+
+## 6. Main Features
+
+1. Virtual biometric sensor simulation.
+2. Device-interface abstraction.
+3. Data validation.
+4. Health threshold detection.
+5. Console-based monitoring dashboard.
+6. CSV data logging.
+7. POSIX signal handling.
+8. Producer-consumer process communication.
+9. Graceful application shutdown.
+10. Modular and testable design.
+
+## 7. System Architecture
+
+The application follows this processing pipeline:
+
+Virtual Sensor → Device Interface → Data Validation → Health Analyzer → Data Logger → Console Dashboard
+
+A separate process communication demonstration uses:
+
+Producer Process → POSIX Pipe → Consumer Process
+
+## 8. Project Structure
+
+```text
+Wearable_Fitness_Tracker_Project/
+│
+├── bin/                 Compiled executable
+├── docs/                Project documentation and UML
+├── include/             Header files
+├── scripts/             Helper scripts
+├── src/                 C++ source files
+├── tests/               Test files
+├── biometric_data.csv   Biometric log data
+├── Makefile             Build configuration
+└── README.md            Project documentation
+```
+
+## 9. Requirements
+
+- Ubuntu Linux or compatible Linux environment
+- GNU G++ supporting C++17
+- GNU Make
 - Git
-- Simulated wearable sensors
 
-## 1. Project Overview
-This project implements a Linux-based virtual biometric data pipeline for a wearable fitness tracker. Since no physical wearable hardware is required, the system simulates sensors that generate heart-rate, SpO2, temperature, step-count and motion data.
+## 10. Installation and Execution
 
-The application collects sensor readings, validates them, processes them, stores them in a log file, detects abnormal values and displays a real-time health summary.
+### Step 1: Clone the repository
 
-The project demonstrates C++ programming, Linux process/file concepts, inter-process communication concepts, signal handling, device-interface abstraction and software engineering practices.
+```bash
+git clone https://github.com/harishh002/Wearable-Fitness-Tracker.git
+```
 
-## 2. Main Features
-1. Simulated biometric sensor generation
-2. Device-interface abstraction representing a wearable device driver boundary
-3. Data validation
-4. Health threshold detection
-5. Real-time console dashboard
-6. CSV logging
-7. POSIX signal handling
-8. Multi-process pipeline using fork/pipe
-9. Graceful shutdown
-10. Testable modular C++ design
+### Step 2: Enter the project directory
 
-## 3. Architecture
-Sensor Simulator -> Device Interface -> Processing/Validation -> Health Analyzer -> Logger -> Dashboard
+```bash
+cd Wearable-Fitness-Tracker
+```
 
-A separate producer/consumer demonstration uses a POSIX pipe:
-Producer process -> pipe -> Consumer process
-
-## 4. Build
-Requirements:
-- Linux
-- g++
-- C++17
-- make
+### Step 3: Compile
 
 ```bash
 make
+```
+
+### Step 4: Run
+
+```bash
 ./bin/fitness_tracker
 ```
 
-Run tests:
+### Step 5: Run tests
+
 ```bash
 make test
 ```
 
-Clean:
+### Step 6: Clean generated build files
+
 ```bash
 make clean
 ```
 
-## 5. Project Structure
+## 11. Linux Device Driver Scope
+
+The current implementation uses a user-space DeviceInterface abstraction to represent the boundary between the application and a wearable device.
+
+The project demonstrates device-interface design and Linux system programming concepts.
+
+An actual Linux kernel character device driver is not included in the current implementation.
+
+## 12. Expected Output
+
 ```text
-src/       implementation
-include/   header files
-tests/     basic tests
-docs/      stage documentation and UML
-scripts/   demo helpers
-evidence/  screenshots/progress evidence
-Makefile
-README.md
+Heart Rate : 78 bpm
+SpO2       : 98 %
+Temperature: 36.7 C
+Steps      : 1240
+Status     : NORMAL
+Message    : Biometric readings within configured limits
 ```
 
-## 6. Stage Roadmap
-Stage 1: Introduction
-Stage 2: Requirements and PRD
-Stage 3: Architecture and UML
-Stage 4: Initial prototype
-Stage 5: Testing and improvement
-Stage 6: Final implementation and presentation
+The system generates alerts when simulated readings cross configured thresholds.
 
-## 7. Device Driver Scope
-This academic prototype does not implement a kernel module. Instead, `DeviceInterface` models the boundary between an application and a wearable device. The simulated sensor acts as the hardware source. This demonstrates the driver-layer concept without requiring physical hardware or kernel development.
+## 13. Testing
 
-## 8. Expected Output
-The program prints periodic biometric readings similar to:
+The project can be tested for:
 
-Heart Rate: 78 bpm
-SpO2: 98 %
-Temperature: 36.7 C
-Steps: 1240
-Status: NORMAL
+- Successful compilation.
+- Sensor data generation.
+- Data validation.
+- Health-status classification.
+- CSV file generation.
+- Process communication.
+- Graceful shutdown.
 
-When a generated value crosses a configured threshold, the health analyzer reports an alert and the event is logged.
+## 14. Limitations
 
-## 9. Future Improvements
-- Real Bluetooth wearable integration
-- Linux kernel character driver
-- SQLite database
-- GUI dashboard
-- MQTT/IoT communication
-- Real sensor hardware
-- Long-term analytics and charts
+- Sensor readings are simulated.
+- Physical wearable hardware is not connected.
+- The current version does not implement a Linux kernel module.
+- Health analysis is intended for academic demonstration and is not a medical diagnostic system.
+
+## 15. Future Enhancements
+
+- Linux kernel character device driver.
+- Real wearable sensor integration.
+- Bluetooth communication.
+- SQLite database integration.
+- Graphical monitoring dashboard.
+- Long-term biometric analytics.
+
+## 16. Conclusion
+
+The Wearable Fitness Tracker demonstrates how C++ and Linux system programming concepts can be used to design a modular biometric data-processing pipeline.
+
+The project provides a foundation for future development involving Linux device drivers, embedded systems, and real-time wearable monitoring.
+
+## Author
+
+**Harish Chandra Mohapatra**
+
+**GitHub:** https://github.com/harishh002/Wearable-Fitness-Tracker
