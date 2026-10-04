@@ -1,8 +1,6 @@
 # Wearable Fitness Tracker
 ### Linux-Based Virtual Biometric Data Pipeline
 
-**Capstone Project – Module 9**
-
 ## 1. Project Information
 
 - **Project Type:** Individual Project
